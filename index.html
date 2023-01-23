@@ -34,11 +34,30 @@
             background-color: hsl(50, 100%, 50%);
             border: .25vmin solid black;
         }
+        #points{
+            position:absolute;
+            top: 20%;
+            color:red;
+            font: 2.5rem bold;
+        }
+        #view {
+            position: absolute;
+            right: 15%;
+            bottom: 5%;
+        }
+        #instruction{
+            position: absolute;
+            right: 80%;
+            bottom: 5%;
+        }
     </style>
     <script src="game.js" defer type="module"></script>
 
 </head>
 <body>
     <div id="game-board"></div>
+    <div id="points"></div>
+    <button id="view">View Score</button>
+    <button id="instruction">Instructions</button>
 </body>
 </html>
