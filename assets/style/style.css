@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: black;
+}
+
+#game-board {
+    background-color: #ccc;
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    /* position: fixed; */
+}
+
+.snake {
+    background-color: hsl(200, 100%, 50%);
+    border: .25vmin solid black;
+}
+
+.food {
+    background-color: hsl(50, 100%, 50%);
+    border: .25vmin solid black;
+}
+
+#container{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#level, #points {
+    position:relative;
+    top: 15%;
+    color:red;
+    font: 2.5rem bold;
+}
+
+/* #level {
+    position:relative;
+    top: 15%;
+
+    color:red;
+    font: 2.5rem bold;
+} 
+#points{
+    position:relative;
+    top: 20%;
+    color:red;
+    font: 2.5rem bold;
+}  */
+
+#view {
+    position: absolute;
+    right: 15%;
+    bottom: 5%;
+}
+#instruction {
+    position: absolute;
+    right: 80%;
+    bottom: 5%;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modaldiv {
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    height:35%;
+    padding:5%;
+}

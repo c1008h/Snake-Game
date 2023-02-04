@@ -5,59 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <style>
-        body {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            background-color: black;
-        }
-
-        #game-board {
-            background-color: #ccc;
-            width: 100vmin;
-            height: 100vmin;
-            display: grid;
-            grid-template-rows: repeat(21, 1fr);
-            grid-template-columns: repeat(21, 1fr);
-        }
-
-        .snake {
-            background-color: hsl(200, 100%, 50%);
-            border: .25vmin solid black;
-        }
-
-        .food {
-            background-color: hsl(50, 100%, 50%);
-            border: .25vmin solid black;
-        }
-        #points{
-            position:absolute;
-            top: 20%;
-            color:red;
-            font: 2.5rem bold;
-        }
-        #view {
-            position: absolute;
-            right: 15%;
-            bottom: 5%;
-        }
-        #instruction{
-            position: absolute;
-            right: 80%;
-            bottom: 5%;
-        }
-    </style>
-    <script src="game.js" defer type="module"></script>
-
+    <link rel="stylesheet" href="./assets/style/style.css"/>
+    <script src="./assets/js/game.js" defer type="module"></script>
 </head>
 <body>
     <div id="game-board"></div>
-    <div id="points"></div>
+    <div id='container' class="row d-flex justify-content-center">
+        <div id="level"></div>
+        <div id="points"></div>
+    </div>
     <button id="view">View Score</button>
     <button id="instruction">Instructions</button>
+    <script src="./assets/js/popups.js"></script>
 </body>
 </html>

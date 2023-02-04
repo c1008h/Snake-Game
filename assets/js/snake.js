@@ -1,12 +1,14 @@
 import { getInputDirect } from "./input.js"
-
 export const SNAKE_SPEED = 3
 
+// where the snake always starts
 const snakeBody = [
     { x: 10, y: 11 },
 ]
+
 let newSegments = 0
 
+// removing last piece when snake moves and updates
 export function update() {
     addSegments()
 
@@ -21,6 +23,7 @@ export function update() {
     snakeBody[0].y += inputDirection.y
 }
 
+// drawing the snake
 export function draw(gameBoard) {
     snakeBody.forEach(segment => {
         const snakeElement = document.createElement('div')
@@ -32,7 +35,7 @@ export function draw(gameBoard) {
         gameBoard.appendChild(snakeElement)
     })
 }
-
+// Snake grows
 export function expandSnake(amount) {
     newSegments += amount
 }
@@ -44,6 +47,7 @@ export function onSnake(position, { ignoreHead = false } = {}) {
     })
 }
 
+// Returning where the snake head is
 export function getSnakeHead() {
     return snakeBody[0]
 }
@@ -56,6 +60,7 @@ function equalPositions(pos1, pos2) {
     return pos1.x === pos2.x && pos1.y === pos2.y
 }
 
+// When snake eats food, the body grows by one
 function addSegments() {
     for(let i = 0; i < newSegments; i++) {
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })

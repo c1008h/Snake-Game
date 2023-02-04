@@ -1,21 +1,33 @@
-import { onSnake, expandSnake } from './snake.js'
+import { onSnake, expandSnake, SNAKE_SPEED } from './snake.js'
 import { randomGridPosition } from './grid.js'
 let food = getRandomFoodPosition()
 let points = 0;
 const EXPANSION_RATE = 1
 const pointElement = document.getElementById('points')
-
+const levelElement = document.getElementById('level')
+let level = 0
 
 export function update() {
     if(onSnake(food)) {
+        // Displaying level and points everytime snake eats
+        level ++
         points += 50
+        levelElement.textContent = ''
+        levelElement.textContent = 'Level: ' + level
         pointElement.textContent = ''
-        pointElement.textContent = points
+        pointElement.textContent = 'Points: ' + points
         console.log(points)
-        localStorage.setItem('points', points)
+
         expandSnake(EXPANSION_RATE)
         food = getRandomFoodPosition()
+        // Every five levels, user gets bonus and snake speeds up 
+        if(level % 5 === 0) {
+            console.log('Speeding up!')
+            SNAKE_SPEED + 1
+            points += 500
+        }
     }
+    
 }
 
 export function draw(gameBoard) {
